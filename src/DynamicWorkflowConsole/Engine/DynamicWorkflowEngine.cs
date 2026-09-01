@@ -6,14 +6,9 @@ using RulesEngine.Models;
 
 namespace DynamicWorkflowConsole.Engine;
 
-public class DynamicWorkflowEngine
+public class DynamicWorkflowEngine(IServiceProvider serviceProvider)
 {
-    private readonly IServiceProvider _serviceProvider;
-
-    public DynamicWorkflowEngine(IServiceProvider serviceProvider)
-    {
-        _serviceProvider = serviceProvider;
-    }
+    private readonly IServiceProvider _serviceProvider = serviceProvider;
 
     public async Task ExecuteWorkflowAsync(string workflowName, OrderContext context)
     {
@@ -85,8 +80,8 @@ public class DynamicWorkflowEngine
 
     private List<DbWorkflowStep> FetchStepsFromDatabase()
     {
-        return new List<DbWorkflowStep>
-        {
+        return
+        [
             new DbWorkflowStep
             {
                 StepOrder = 1,
@@ -121,6 +116,6 @@ public class DynamicWorkflowEngine
                   }
                 ]"
             }
-        };
+        ];
     }
 }
