@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DynamicWorkflowConsole/DynamicWorkflowConsole.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DynamicWorkflowConsole.Tests/DynamicWorkflowConsole.Tests.csproj" />
+  </Folder>
+</Solution>
